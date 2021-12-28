@@ -1,0 +1,11 @@
+name = "Tabben"
+uuid = "b92785ef-f07b-4bd7-b7d7-af12e1e8f537"
+authors = ["Timothy Lin <32549553+tmthyln@users.noreply.github.com>"]
+version = "0.1.0"
+
+[deps]
+NPZ = "15e1cf62-19b3-5cfa-8e77-841668bca605"
+TOML = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
+
+[compat]
+julia = "1.6"
