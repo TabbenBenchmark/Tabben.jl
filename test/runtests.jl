@@ -4,6 +4,6 @@ using Test
 
 @testset "unit tests" begin
 
+    @test true
 
-
-end verbose=true
+end;
