@@ -4,6 +4,6 @@ using Test
 
 @testset "unit tests" begin
 
-    @test true
+    include("test_dataset_functions.jl")
 
 end;

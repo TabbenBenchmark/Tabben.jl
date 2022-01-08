@@ -72,6 +72,7 @@ license(ds::OpenTabularDataset) = has_extra(ds, "license") ? ds.extras["license"
 bibtex(ds::OpenTabularDataset) = has_extra(ds, "bibtex") ? ds.extras["bibtex"] : nothing
 
 # indexing and iteration protocol on the dataset itself
+Base.getindex(ds::OpenTabularDataset) = (ds.input, ds.output)
 Base.getindex(ds::OpenTabularDataset, i) = (ds.input[:, i], ds.output[:, i])
 Base.firstindex(ds::OpenTabularDataset) = 1
 Base.lastindex(ds::OpenTabularDataset) = length(ds)
