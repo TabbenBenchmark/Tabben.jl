@@ -1,134 +1,198 @@
 [adult-extras]
-git-tree-sha1 = "81097e082a1fe62ed78820333589326d87578ff8"
+git-tree-sha1 = "58f46484e070b43d7d4b1f3f06bc9eea10aaf55a"
 lazy = true
 
     [[adult-extras.download]]
-    sha256 = "7719396b40a82b191d81d8806c0207f6881a81405d287c43311befd22e390739"
+    sha256 = "935d9a5c4cfe18931f886bce4f6f5da439761bfb12ea4e73e0b4b375eb7b7fe8"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/adult.json.tar.gz"
 
 [adult-npz]
-git-tree-sha1 = "3f7187ebf501d5b3fad16e94c835c2df849130a8"
+git-tree-sha1 = "1e8517a629efc03b200785db5b4aaecb3e8e51ce"
 lazy = true
 
     [[adult-npz.download]]
-    sha256 = "0b7143c924281e299dd2c3051efe13b41d880bc8e96e489cfea0f9a5a1931cc2"
+    sha256 = "04ed3c7d4b3fb7e2516627c0a4f0d69d1a09de78c5ee2dd4ebd43a379218062a"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/adult.npz.tar.gz"
 
 [amazon-extras]
-git-tree-sha1 = "3d4e4fca12e40acb0a568f5a945da4a4c181cd0a"
+git-tree-sha1 = "df758b7adb3fc3ed6cb142f897e1ea28f9e44151"
 lazy = true
 
     [[amazon-extras.download]]
-    sha256 = "43546ff08a8103f860e5a4f11391b05a4eeaefbc3e6d0ccd9f8e1f8ec65a63cb"
+    sha256 = "713c3b7199e822dc7a7a18961b4762f1df13d601461269ceafeb6637b6e87bbd"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/amazon.json.tar.gz"
 
 [amazon-npz]
-git-tree-sha1 = "c66104bd4d1a9de44dc9a6aab1921b6acd639f6b"
+git-tree-sha1 = "fe84a11c9a489cbfb4771bb9d3867f9085fdb343"
 lazy = true
 
     [[amazon-npz.download]]
-    sha256 = "c9bf1e2bd2bf0de89b423ac583f2d036e3a0cc522cb0d645da02c58dc73fa07e"
+    sha256 = "165048e73c63219b8cce872c46d203f2ff4c25a4f5261f99715fd4c4bc44883c"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/amazon.npz.tar.gz"
 
+[arcene-extras]
+git-tree-sha1 = "ebe30d0d922c0dfdccddd75de6918ac9573ba69a"
+lazy = true
+
+    [[arcene-extras.download]]
+    sha256 = "be4b0aafb994deee2fbe506ead20039f86ba1870ed00a93a999c580ff60a48a0"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/arcene.json.tar.gz"
+
 [arcene-npz]
-git-tree-sha1 = "962ec0c1024b250cf5ef1a20b92b3e3d2b2c13d7"
+git-tree-sha1 = "49def1e6c4ba40909566189bdeeb05a16a6a9c44"
 lazy = true
 
     [[arcene-npz.download]]
-    sha256 = "ca2ef6868b8eb000e936b191833931aef2b93e2231c78fc2d5404cf7cae1f0f9"
+    sha256 = "9857671730d2901449d3e9289728604b2fa92b15860d4ebdc6f6bd5b2f08d677"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/arcene.npz.tar.gz"
 
+[cifar10-extras]
+git-tree-sha1 = "4cb535fed63a151a45483877b4baab32b5911d6e"
+lazy = true
+
+    [[cifar10-extras.download]]
+    sha256 = "8158e646936eca97057e8370c3b1756b336f88017fea0ae5b1c106a5496f558f"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/cifar10.json.tar.gz"
+
+[cifar10-npz]
+git-tree-sha1 = "113422c4224a29f432bf31f93f7d34f06ce76aae"
+lazy = true
+
+    [[cifar10-npz.download]]
+    sha256 = "4882225a24205c18fcd50f95defa6c5232533140533ccb2cd41eb0f52ca51dc6"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/cifar10.npz.tar.gz"
+
 [covertype-extras]
-git-tree-sha1 = "eec0d7dea46995b268bb47c8289add09365cfadc"
+git-tree-sha1 = "76770d31fa9440ffdba51a77933720b64cbc463a"
 lazy = true
 
     [[covertype-extras.download]]
-    sha256 = "401135998adb07e067b3b8eae1b8b2789fca13a99c1279cdb8dd7c9dc0107a6b"
+    sha256 = "d9f0fd75db1d485b1e3ffa743af32f84f13cfbc013775d34e5fde5c9d29f43d4"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/covertype.json.tar.gz"
 
 [covertype-npz]
-git-tree-sha1 = "42d168a41cb0f1383301a07ae49474bab69c4920"
+git-tree-sha1 = "93c96670b0c0467c1cf78e9332c726719f6123fe"
 lazy = true
 
     [[covertype-npz.download]]
-    sha256 = "ca31d623cd4c0b8d36a9a8b75a6c58c9f33df243a1bbbed1fa63a7f8aa410ebb"
+    sha256 = "d22f5b40387b6320b4eba2d990dfd1ff8c33eb5836227042c21108cd46ba8044"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/covertype.npz.tar.gz"
 
+[duolingo-categorical-extras]
+git-tree-sha1 = "fc2052c910fe054b9186c1f791bedbbe55c4dd2c"
+lazy = true
+
+    [[duolingo-categorical-extras.download]]
+    sha256 = "a93c7c627273fab1809e06f26e31b70f8a20ac4544917d0846579b05ab390ce8"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/duolingo-original.json.tar.gz"
+
 [duolingo-categorical-npz]
-git-tree-sha1 = "f4447fa690eca2ce7e0c476fe08a338b8d1f23c3"
+git-tree-sha1 = "72e1d73743bf342348a7dbc28fa0ade0f955c0dc"
 lazy = true
 
     [[duolingo-categorical-npz.download]]
-    sha256 = "ccdd22e8f48964c1218dd0c9addbd4fd6cf3838b2d0f8b47d54c20ade5d5733a"
+    sha256 = "b156f22d8eaacd4a747d96ad5c2efff1f8fe4866abd2bf462ae8d83d6a452087"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/duolingo-original.npz.tar.gz"
 
+[duolingo-original-extras]
+git-tree-sha1 = "fc2052c910fe054b9186c1f791bedbbe55c4dd2c"
+lazy = true
+
+    [[duolingo-original-extras.download]]
+    sha256 = "a93c7c627273fab1809e06f26e31b70f8a20ac4544917d0846579b05ab390ce8"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/duolingo-original.json.tar.gz"
+
 [duolingo-original-npz]
-git-tree-sha1 = "f4447fa690eca2ce7e0c476fe08a338b8d1f23c3"
+git-tree-sha1 = "72e1d73743bf342348a7dbc28fa0ade0f955c0dc"
 lazy = true
 
     [[duolingo-original-npz.download]]
-    sha256 = "ccdd22e8f48964c1218dd0c9addbd4fd6cf3838b2d0f8b47d54c20ade5d5733a"
+    sha256 = "b156f22d8eaacd4a747d96ad5c2efff1f8fe4866abd2bf462ae8d83d6a452087"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/duolingo-original.npz.tar.gz"
 
 [higgs-extras]
-git-tree-sha1 = "a0aa9737751d933dd116df43e413ca1120c0dc51"
+git-tree-sha1 = "373d9db10a218689e917c079cf6d9fdb76dfe323"
 lazy = true
 
     [[higgs-extras.download]]
-    sha256 = "8fac342a11e20f36de93dcd399283c9123ec95639854b143a2c2b87b44fe9cbe"
+    sha256 = "d6a315199e7a3abf621f81b68deafcc2ea5a02ecfe689dc898728dccad32e8e8"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/higgs.json.tar.gz"
 
 [higgs-npz]
-git-tree-sha1 = "cb74a169c48e482098df688ed1321e69aaca2cbc"
+git-tree-sha1 = "78a6834a18bf677173eca31a619bd92817207811"
 lazy = true
 
     [[higgs-npz.download]]
-    sha256 = "e6663229e3b437e2b12c0c0abf559c48c15106ec179c315b9dfa4e091f8791f9"
+    sha256 = "51f77ea4e652fb6636653e43e01ebe8fdd39d89d6fa32369374943c815e7dc7e"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/higgs.npz.tar.gz"
 
 [metadata]
-git-tree-sha1 = "df3083a0549e52f94d16364d11889333b035e1d0"
+git-tree-sha1 = "2b6b3aa40787b78338e255623fce126c462f130f"
 
     [[metadata.download]]
-    sha256 = "fd1e9aa27c25884366baec27da6533d30f1ca87696e3228f7724b4a55f3afe5e"
+    sha256 = "088ab942ca6f5f32b772a597efed5825bf32b6ee98f511a9fb8de1dd4f12663d"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/data.toml.tar.gz"
 
+[musk-extras]
+git-tree-sha1 = "c8b3779ecea8782bf5b91d2a24ecbc4d5c352d54"
+lazy = true
+
+    [[musk-extras.download]]
+    sha256 = "43de7d9df28f62f577745528b475006486306bc2e4239496e62cb50fc82becd8"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/musk.json.tar.gz"
+
 [musk-npz]
-git-tree-sha1 = "72cd4628fe7427b1f6e6fa4d0520623ac50a7ba6"
+git-tree-sha1 = "00ddd3d316a495cd0b909cacb6086c52302c6446"
 lazy = true
 
     [[musk-npz.download]]
-    sha256 = "97b1d0f3e085d644ccf8b68ac3cc93ad8bf21539fc3392dae767b506e44e64ed"
+    sha256 = "dfc759c2de97eb30b420288208549e6c37bc09e373712033b15507dce32be74d"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/musk.npz.tar.gz"
 
+[parkinsons-extras]
+git-tree-sha1 = "be7e2ac59785b747fadb959e9fafcbf3848021da"
+lazy = true
+
+    [[parkinsons-extras.download]]
+    sha256 = "a7ca7639aef95b84e908442b964ce835c35eb009712ce50ca4d69903c581b048"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/parkinsons.json.tar.gz"
+
 [parkinsons-npz]
-git-tree-sha1 = "55134cf9275dd0ef920cf996555fce12f76d355e"
+git-tree-sha1 = "c090a25e44b1c2a5ba6d1802719110029abb760f"
 lazy = true
 
     [[parkinsons-npz.download]]
-    sha256 = "4fb58ee5ff3de14c14e0910ff529395a06ce54d93eeb4d097038c1807b351b66"
+    sha256 = "1cd78efae69eae5ae7b36b805a7686b3952c1e5a9895a9fcfccd3209df552f6a"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/parkinsons.npz.tar.gz"
 
+[poker-extras]
+git-tree-sha1 = "6a50d95d1e2337375884a44b39047a3d0b329ac6"
+lazy = true
+
+    [[poker-extras.download]]
+    sha256 = "bcf815114492667a778b78d000116d06822a7e259a7b860175f7c58c6241bf58"
+    url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/poker.json.tar.gz"
+
 [poker-npz]
-git-tree-sha1 = "c7d89077f2d47441c13a06edcaa96ff7c09ac9ec"
+git-tree-sha1 = "9151b80d9380522d8032e9785d775b2d2383b714"
 lazy = true
 
     [[poker-npz.download]]
-    sha256 = "207c3922d73b174682b33c661e10dfba050aad81e8fb78182540aae787611abc"
+    sha256 = "60a655d470c95064cde72621af1b7941730171a6469d4e64727aa4c4a707d8aa"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/poker.npz.tar.gz"
 
 [rossman-extras]
-git-tree-sha1 = "de969b591a76956876c8a54c3e3940eb59f16bfc"
+git-tree-sha1 = "71626938f3c5f0ddcdf965c8203ce2cbe68fa3be"
 lazy = true
 
     [[rossman-extras.download]]
-    sha256 = "09d3a6ecf1ec7b658fe156aa1aa4ad6a34a30e47a3645d5a279235ad014df5d4"
+    sha256 = "aa97cf984033576528d3d8274adec10b8241a934e4193bff067f09f21b6c2695"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/rossman.json.tar.gz"
 
 [rossman-npz]
-git-tree-sha1 = "ff0449af6a087d5bf396fb38feed54974cfbe2c5"
+git-tree-sha1 = "ec97ebf7e8584e38aec9ac7d375371a3da70ae76"
 lazy = true
 
     [[rossman-npz.download]]
-    sha256 = "0e661a6d168476ea33caad5cb908f169f4a66a387727997f5553f32ad44e5d15"
+    sha256 = "c1e4dc78e4311dc7dfc4f3550d822aeafe61a667660ac6ffc9db8cc705c11453"
     url = "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/rossman.npz.tar.gz"

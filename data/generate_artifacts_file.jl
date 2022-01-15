@@ -1,7 +1,18 @@
 using ArtifactUtils, Artifacts, TOML
 
 
-function add_all_artifacts(metadata)
+function add_all_artifacts()
+    artifacts_file = abspath(joinpath(@__DIR__, "..", "Artifacts.toml"))
+
+    metadata_hash = add_artifact!(
+        artifacts_file,
+        "metadata",
+        "https://github.com/umd-otb/OpenTabularDataBenchmark/releases/download/v0.0.7-pre/data.toml.tar.gz",
+        force=true,
+    )
+
+    metadata = TOML.parsefile(joinpath(artifact_path(metadata_hash), "data.toml"))
+
     for (name, data) in metadata
         println("Adding artifacts for $(name)")
 
@@ -10,7 +21,6 @@ function add_all_artifacts(metadata)
             "../Artifacts.toml",
             "$(name)-npz",
             string(data["data_location"], ".tar.gz"),
-            clear=false,
             lazy=true,
             force=true
         )
@@ -28,5 +38,4 @@ function add_all_artifacts(metadata)
     end
 end
 
-metadata = TOML.parsefile("data.toml")
-add_all_artifacts(metadata)
+add_all_artifacts()
