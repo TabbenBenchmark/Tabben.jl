@@ -19,7 +19,7 @@ struct OpenTabularDataset{
 
     function OpenTabularDataset(input, output, metadata, extras=nothing)
         ndims(input) != 2 && throw("input must have exactly 2 dimensions")
-        ndims(output) ∉ 2 && throw("output must have 1-2 dimensions")
+        ndims(output) ∉ 2 && throw("output must have 2 dimensions")
         size(input, 2) != size(output, 2) &&
             throw("input and output must have the same number of examples")
 

@@ -1,12 +1,20 @@
+using Tabben: OpenTabularDataset
 
 function random_classification_dataset(n, m, k, c)
-    input = rand(n, m)
-    output = rand(1:c, k, m)
+    input = rand(m, n)
+    output = rand(1:c, k, n)
     metadata = Dict(
-        task => "classification",
-        classes => c,
-        bibtex => "test bibtex",
+        "data_location" => "https://url/to/the/npz/file.npz",
+        "extras_location" => "https://url/to/the/extras/file.json",
+        "task" => "classification",
+        "classes" => c,
+    )
+    extras = Dict(
+        "license" => "test license",
+        "bibtex" => "test bibtex",
+        "column-names-attributes" => ["A$i" for i in 1:n],
+        "column-names-target" => ["T$i" for i in 1:k]
     )
 
-
+    return OpenTabularDataset(input, output, metadata, extras)
 end
