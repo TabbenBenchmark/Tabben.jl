@@ -11,12 +11,12 @@ You can install the latest stable version using the Julia package manager:
 (env) pkg> add Tabben
 ```
 
-Everything for the data loading side revolves around the `OpenTabularDataset` struct. To get started, specify the "name" of the dataset (and other parameters if you want). Your local copy of the dataset will be stored in the usual place for artifacts in your Julia installation.
+Everything for the data loading side revolves around the `TabularDataset` struct. To get started, specify the "name" of the dataset (and other parameters if you want). Your local copy of the dataset will be stored in the usual place for artifacts in your Julia installation.
 ```julia
-using Tabben: OpenTabularDataset
+using Tabben: TabularDataset
 
-ds = OpenTabularDataset("arcene")  # defaults to the 'train' split
-test_ds = OpenTabularDataset("arcene", :test)
+ds = TabularDataset("arcene")  # defaults to the 'train' split
+test_ds = TabularDataset("arcene", :test)
 ```
 
 To list all the available datasets, there's the `datasets` variable:

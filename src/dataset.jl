@@ -1,12 +1,13 @@
 using LazyArtifacts
 using NPZ
+using Tables
 using TOML
 
 const _metadata = TOML.parsefile(joinpath(artifact"metadata", "data.toml"))
 const datasets = keys(_metadata)
 
 
-struct OpenTabularDataset{
+struct TabularDataset{
         DataElType <: Number,
         TargetElType <: Number,
         ExtrasType <: Union{Dict{String, Any},Nothing}
@@ -17,7 +18,7 @@ struct OpenTabularDataset{
     metadata::Dict{String, Any}
     extras::ExtrasType
 
-    function OpenTabularDataset(input, output, metadata, extras=nothing)
+    function TabularDataset(input, output, metadata, extras=nothing)
         ndims(input) != 2 && throw("input must have exactly 2 dimensions")
         ndims(output) ∉ 2 && throw("output must have 2 dimensions")
         size(input, 2) != size(output, 2) &&
@@ -32,7 +33,7 @@ struct OpenTabularDataset{
     end
 end
 
-function OpenTabularDataset(name::AbstractString, split=:train)
+function TabularDataset(name::AbstractString, split=:train)
     name = lowercase(name)
     name ∉ keys(_metadata) && throw("Unknown dataset `$name`")
 
@@ -46,39 +47,45 @@ function OpenTabularDataset(name::AbstractString, split=:train)
     metadata = _metadata[name]
     extras = haskey(metadata, "extras_location") ? metadata["extras_location"] : nothing
 
-    return OpenTabularDataset(input, output, metadata, extras)
+    return TabularDataset(input, output, metadata, extras)
 end
 
 # "basic" getters and info
-num_examples(ds::OpenTabularDataset) = size(ds.input, 2)
-num_inputs(ds::OpenTabularDataset) = size(ds.input, 1)
-num_outputs(ds::OpenTabularDataset) = size(ds.output, 1)
+num_examples(ds::TabularDataset) = size(ds.input, 2)
+num_inputs(ds::TabularDataset) = size(ds.input, 1)
+num_outputs(ds::TabularDataset) = size(ds.output, 1)
 
-task(ds::OpenTabularDataset) = ds.metadata["task"]
-num_classes(ds::OpenTabularDataset) =
+task(ds::TabularDataset) = ds.metadata["task"]
+num_classes(ds::TabularDataset) =
     if task(ds) != "classification"
         throw("non-classification datasets don't have a number of classes")
     else
         return ds.metadata["classes"]
     end
 
-has_extras(ds::OpenTabularDataset) = ds.extras !== nothing
-has_extra(ds::OpenTabularDataset, extra_name) = has_extras(ds) && extra_name in keys(ds.extras)
+has_extras(ds::TabularDataset) = ds.extras !== nothing
+has_extra(ds::TabularDataset, extra_name) = has_extras(ds) && extra_name in keys(ds.extras)
 
-categorical_attributes(ds::OpenTabularDataset) =
+categorical_attributes(ds::TabularDataset) =
     has_extra(ds, "categories") ? keys(ds.extras["categories"]) : nothing
 
-license(ds::OpenTabularDataset) = has_extra(ds, "license") ? ds.extras["license"] : nothing
-bibtex(ds::OpenTabularDataset) = has_extra(ds, "bibtex") ? ds.extras["bibtex"] : nothing
+license(ds::TabularDataset) = has_extra(ds, "license") ? ds.extras["license"] : nothing
+bibtex(ds::TabularDataset) = has_extra(ds, "bibtex") ? ds.extras["bibtex"] : nothing
 
 # indexing and iteration protocol on the dataset itself
-Base.getindex(ds::OpenTabularDataset) = (ds.input, ds.output)
-Base.getindex(ds::OpenTabularDataset, i) = (ds.input[:, i], ds.output[:, i])
-Base.firstindex(ds::OpenTabularDataset) = 1
-Base.lastindex(ds::OpenTabularDataset) = length(ds)
-Base.length(ds::OpenTabularDataset) = num_examples(ds)
+Base.getindex(ds::TabularDataset) = (ds.input, ds.output)
+Base.getindex(ds::TabularDataset, i) = (ds.input[:, i], ds.output[:, i])
+Base.firstindex(ds::TabularDataset) = 1
+Base.lastindex(ds::TabularDataset) = length(ds)
+Base.length(ds::TabularDataset) = num_examples(ds)
 
-IndexStyle(::Type{OpenTabularDataset}) = IndexLinear()
+IndexStyle(::Type{TabularDataset}) = IndexLinear()
 
-#Base.eltype(::Type{OpenTabularDataset}) = Tuple{Vector, Vector}
+#Base.eltype(::Type{TabularDataset}) = Tuple{Vector, Vector}
+
+# Tables.jl interface
+Tables.istable(::Type{TabularDataset}) = true
+Tables.rowaccess(::Type{TabularDataset}) = true
+
+
 

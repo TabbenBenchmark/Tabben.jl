@@ -1,6 +1,6 @@
 module Tabben
 
-export OpenTabularDataset
+export TabularDataset
 
 include("dataset.jl")
 

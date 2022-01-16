@@ -1,4 +1,4 @@
-using Tabben: OpenTabularDataset
+using Tabben: TabularDataset
 
 function random_classification_dataset(n, m, k, c)
     input = rand(m, n)
@@ -16,5 +16,5 @@ function random_classification_dataset(n, m, k, c)
         "column-names-target" => ["T$i" for i in 1:k]
     )
 
-    return OpenTabularDataset(input, output, metadata, extras)
+    return TabularDataset(input, output, metadata, extras)
 end
