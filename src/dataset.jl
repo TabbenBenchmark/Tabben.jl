@@ -1,7 +1,8 @@
 using LazyArtifacts
 using NPZ
 using Tables
-using TOML
+import TOML
+import JSON
 
 const _metadata = TOML.parsefile(joinpath(artifact"metadata", "data.toml"))
 const datasets = keys(_metadata)
@@ -28,7 +29,6 @@ struct TabularDataset{
 
         in_type = eltype(input)
         out_type = eltype(output)
-        target_type = ndims(output) == 1 ? Vector : Matrix
         extras_type = extras === nothing ? Nothing : Dict{String, Any}
 
         # check input column names
@@ -69,7 +69,11 @@ function TabularDataset(name::AbstractString, split=:train)
     input = transpose(data_dict["$split-data"])
     output = transpose(data_dict["$split-labels"])
     metadata = _metadata[name]
-    extras = haskey(metadata, "extras_location") ? metadata["extras_location"] : nothing
+    if haskey(metadata, "extras_location")
+        extras = JSON.parsefile(joinpath(@artifact_str("$name-extras"), "$name.json"), dicttype=Dict, inttype=Int64)
+    else
+        extras = nothing
+    end
 
     return TabularDataset(input, output, metadata, extras)
 end
@@ -105,12 +109,14 @@ Base.length(ds::TabularDataset) = num_examples(ds)
 
 IndexStyle(::Type{TabularDataset}) = IndexLinear()
 
-#Base.eltype(::Type{TabularDataset}) = Tuple{Vector, Vector}
+Base.eltype(::Type{TabularDataset{InType, OutType, ExtrasType}}) where {InType, OutType, ExtrasType} = Tuple{Vector{InType}, Vector{OutType}}
+
+Base.iterate(ds::TabularDataset, i=1) = i <= num_examples(ds) ? (ds[i], i + 1) : nothing
 
 # Tables.jl interface
 Tables.istable(::Type{TabularDataset}) = true
 Tables.rowaccess(::Type{TabularDataset}) = true
-Tables.columnaccess(::TabularDataset) = true
+Tables.columnaccess(::Type{TabularDataset}) = true
 Tables.columnnames(ds::TabularDataset) = vcat(ds.input_names, ds.output_names)
 
 Tables.schema(ds::TabularDataset) = Tables.Schema{nothing, nothing}(
