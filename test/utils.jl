@@ -2,7 +2,7 @@ using Tabben: TabularDataset
 
 function random_classification_dataset(n, m, k, c)
     input = rand(m, n)
-    output = rand(1:c, k, n)
+    output = rand(0:c-1, k, n)
     metadata = Dict(
         "data_location" => "https://url/to/the/npz/file.npz",
         "extras_location" => "https://url/to/the/extras/file.json",
