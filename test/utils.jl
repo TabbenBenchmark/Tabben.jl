@@ -12,9 +12,9 @@ function random_classification_dataset(n, m, k, c)
     extras = Dict(
         "license" => "test license",
         "bibtex" => "test bibtex",
-        "column-names-attributes" => ["A$i" for i in 1:n],
+        "column-names-attributes" => ["A$i" for i in 1:m],
         "column-names-target" => ["T$i" for i in 1:k]
     )
-
+    
     return TabularDataset(input, output, metadata, extras)
 end
