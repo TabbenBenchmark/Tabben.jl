@@ -3,6 +3,8 @@ using NPZ
 using Tables
 import TOML
 import JSON
+using Pkg
+using Pkg.Artifacts
 
 const _metadata = TOML.parsefile(joinpath(artifact"metadata", "data.toml"))
 const datasets = keys(_metadata)
@@ -184,3 +186,17 @@ function Tables.getcolumn(ds::TabularDataset, nm::Symbol)
     end
 end
 Tables.getcolumn(ds::TabularDataset, ::Type, i::Int, ::Symbol) = Tables.getcolumn(ds, i)
+
+# artifact pre-downloading
+
+function ensure_downloaded(artifact_names...)
+    artifacts_file = abspath(joinpath(@__DIR__, "..", "Artifacts.toml"))
+    if length(artifact_names) == 0
+        Pkg.Artifacts.ensure_all_artifacts_installed(artifacts_file)
+    else
+        for artifact_name in artifact_names
+            Pkg.Artifacts.ensure_artifact_installed("$artifact_name-npz", artifacts_file)
+            Pkg.Artifacts.ensure_artifact_installed("$artifact_name-extras", artifacts_file)
+        end
+    end
+end

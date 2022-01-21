@@ -18,7 +18,7 @@ function add_all_artifacts()
 
         # add an artifact for the dataset file
         add_artifact!(
-            "../Artifacts.toml",
+            artifacts_file,
             "$(name)-npz",
             string(data["data_location"], ".tar.gz"),
             lazy=true,
@@ -28,7 +28,7 @@ function add_all_artifacts()
         # add an artifact for the extras file if present
         if "extras_location" in keys(data)
             add_artifact!(
-                "../Artifacts.toml",
+                artifacts_file,
                 "$(name)-extras",
                 string(data["extras_location"], ".tar.gz"),
                 lazy=true,
