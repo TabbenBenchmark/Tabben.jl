@@ -14,7 +14,7 @@ makedocs(
 )
 
 deploydocs(
-    repo = "github.com/umd-otb/Tabben.jl.git",
+    repo = "github.com/TabbenBenchmark/Tabben.jl.git",
     devbranch = "main",
     devurl="latest"
 )
