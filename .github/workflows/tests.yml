@@ -19,12 +19,17 @@ jobs:
         julia-version: ['1.6', '1.7']
 
     steps:
-    # Checks-out repository under $GITHUB_WORKSPACE
-    - uses: actions/checkout@v2
+    - name: Checkout Project
+      uses: actions/checkout@v2
     - name: Setup Julia environment
       uses: julia-actions/setup-julia@v1.4
       with:
         version: ${{ matrix.julia-version }}
         arch: x64
+    - name: Load Cached Julia Artifacts
+      uses: actions/cache@v2
+      with:
+        path: ~/.julia/artifacts
+        key: 'julia-artifacts'
     - uses: julia-actions/julia-buildpkg@latest
     - uses: julia-actions/julia-runtest@latest

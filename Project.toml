@@ -1,7 +1,7 @@
 name = "Tabben"
 uuid = "b92785ef-f07b-4bd7-b7d7-af12e1e8f537"
 authors = ["Timothy Lin <32549553+tmthyln@users.noreply.github.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
