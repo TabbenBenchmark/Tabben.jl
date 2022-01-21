@@ -19,6 +19,14 @@ ds = TabularDataset("arcene")  # defaults to the 'train' split
 test_ds = TabularDataset("arcene", :test)
 ```
 
+Since the `TabularDataset` type implements the Tables.jl interface, it can be easily converted to a DataFrame:
+```julia
+using Tabben: TabularDataset
+using DataFrames
+
+df = DataFrame(TabularDataset("covertype"))
+```
+
 To list all the available datasets, there's the `datasets` variable:
 ```julia
 using Tabben: datasets
