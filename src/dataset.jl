@@ -7,6 +7,7 @@ import JSON
 const _metadata = TOML.parsefile(joinpath(artifact"metadata", "data.toml"))
 const datasets = keys(_metadata)
 
+_check_version(version, min_version=v"1.1.0") = VersionNumber(join(version, ".")) >= min_version
 
 struct TabularDataset{
         DataElType <: Number,
@@ -60,6 +61,11 @@ end
 function TabularDataset(name::AbstractString, split=:train)
     name = lowercase(name)
     name ∉ keys(_metadata) && throw("Unknown dataset `$name`")
+
+    _check_version(npzread(
+        joinpath(@artifact_str("$name-npz"), "$name.npz"),
+        ["_version"]
+    )["_version"])
 
     data_dict = npzread(
         joinpath(@artifact_str("$name-npz"), "$name.npz"),
